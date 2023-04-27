@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+
 """Create and starts a Flaks application"""
 from flask import Flask, Blueprint, render_template, abort
 from models import storage
@@ -11,7 +11,7 @@ app.register_blueprint(app_views)
 print(app.url_map)
 
 @app.teardown_appcontext
-def close_database():
+def close_database(close_db):
     """closes database session"""
     storage.close()
 
