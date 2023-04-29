@@ -1,4 +1,4 @@
-
+#!/usr/bin/python3
 """Create and starts a Flaks application"""
 from flask import Flask, Blueprint, render_template, abort
 from models import storage
