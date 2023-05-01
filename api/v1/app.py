@@ -23,7 +23,7 @@ def close_database(close_db):
 @app.errorhandler(404)
 def page_not_found(error):
     """displays a 404 if it does not match any route"""
-    display_404 = jsonify({"error": "Not found"})
+    display_404 = jsonify({"error": "Not found"}), 404
     return make_response(display_404)
 
 
