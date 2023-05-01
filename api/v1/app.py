@@ -3,7 +3,7 @@
 from flask import Flask, Blueprint, render_template, abort
 from models import storage
 from api.v1.views import app_views
-from os import getenv
+import os
 from flask import jsonify, make_response
 from flask_cors import CORS
 
@@ -28,6 +28,6 @@ def page_not_found(error):
 
 
 if __name__ == "__main__":
-    api_host = getenv("HBNB_API_HOST", "0.0.0.0")
-    api_port = getenv("HBNB_API_PORT", 5000)
+    api_host = os.environ.get('HBNB_API_HOST', '0.0.0.0')
+    api_port = os.environ.get('HBNB_API_PORT', 5000)
     app.run(host=api_host, port=api_port, threaded=True, debug=True)
