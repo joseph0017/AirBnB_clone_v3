@@ -13,10 +13,12 @@ app.register_blueprint(app_views)
 cors = CORS(app, resources={"/*": {"origins": "0.0.0.0"}})
 print(app.url_map)
 
+
 @app.teardown_appcontext
 def close_database(close_db):
     """closes database session"""
     storage.close()
+
 
 @app.errorhandler(404)
 def page_not_found(error):
