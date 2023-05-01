@@ -12,7 +12,7 @@ def status():
 
 
 @app_views.route('/stats', methods=["GET"])
-def stats():
+def check_stats():
     """
     an endpoint or route that retrieves
     the number of each objects by type
@@ -25,4 +25,4 @@ def stats():
         "states": storage.count("State"),
         "users": storage.count("User")
     }
-    return jsonify(item_class)
+    return jsonify({item_class})
